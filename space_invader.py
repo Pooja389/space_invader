@@ -104,8 +104,17 @@ def game_loop():
             aliens.remove(alien)
             bullet.hideturtle()
             bullet.goto(400,-400)
-            
             bullet_state = "ready"
+            if len(aliens) == 15:
+                turtle = Turtle()
+                turtle.penup()
+                turtle.goto(0,0)
+                turtle.color("blue")
+                turtle.pendown()
+                turtle.write("you win",align = "center",font=("Arial", 28, "normal"))
+                turtle.hideturtle()
+                return
+            
             
 
       # Update bullet movement
